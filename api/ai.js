@@ -1,19 +1,23 @@
 export default async function handler(req, res) {
+  // Chỉ cho phép POST
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Chỉ cho phép POST" });
+    return res.status(405).json({
+      error: "Only POST method is allowed"
+    });
   }
 
-  const input = req.body.input;
+  // Lấy prompt từ frontend gửi lên
+  const { prompt } = req.body;
 
-  // 🔒 PROMPT BÍ MẬT – KHÔNG AI THẤY
-  const hiddenPrompt = `
-  Bạn là trợ lý AI cao cấp của Thiện Master AI.
-  Hãy phân tích nội dung sau một cách thông minh, rõ ràng:
-  ${input}
-  `;
+  // Kiểm tra dữ liệu
+  if (!prompt) {
+    return res.status(400).json({
+      error: "Prompt is required"
+    });
+  }
 
-  // 👉 DEMO KẾT QUẢ (sau này thay bằng AI thật)
-  const result = "AI đã nhận nội dung: " + input;
-
-  res.status(200).json({ result });
+  // TRẢ KẾT QUẢ TEST (CHƯA GẮN AI THẬT)
+  return res.status(200).json({
+    result: "✅ AI BACKEND ĐÃ NHẬN: " + prompt
+  });
 }
