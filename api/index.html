@@ -1,36 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <title>Test AI</title>
+  <meta charset="UTF-8">
+  <title>AI Backend – Thiện Master AI</title>
 </head>
 <body>
-  <h2>Test AI Backend</h2>
-
-  <textarea id="input" placeholder="Nhập câu hỏi cho AI..." rows="5" cols="50"></textarea>
-  <br><br>
-  <button onclick="send()">Gửi cho AI</button>
-
-  <pre id="result"></pre>
-
-  <script>
-    async function send() {
-      const text = document.getElementById("input").value;
-
-      const res = await fetch("/api/ai", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          prompt: text
-        })
-      });
-
-      const data = await res.json();
-      document.getElementById("result").innerText =
-        JSON.stringify(data, null, 2);
-    }
-  </script>
+  <h1>🚀 AI Backend đã hoạt động</h1>
+  <p>Web chạy OK – Vercel đã nhận trang chủ.</p>
 </body>
 </html>
