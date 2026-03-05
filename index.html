@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>THIỆN MASTER AI</title>
+
+<style>
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+button{
+padding:15px 25px;
+margin:10px;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+background:#6366f1;
+color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>THIỆN MASTER AI PLATFORM</h1>
+
+<p>Hệ sinh thái AI Tools</p>
+
+<button onclick="openApp('poster')">AI TẠO POSTER</button>
+<button onclick="openApp('chat')">AI CHATBOT</button>
+<button onclick="openApp('video')">AI VIDEO</button>
+
+<div id="app"></div>
+
+<script>
+
+function openApp(type){
+
+let url="";
+
+if(type==="poster"){
+url="LINK_APP_POSTER";
+}
+
+if(type==="chat"){
+url="LINK_APP_CHATBOT";
+}
+
+if(type==="video"){
+url="LINK_APP_VIDEO";
+}
+
+document.getElementById("app").innerHTML=
+`<iframe src="${url}" width="100%" height="700"></iframe>`;
+
+}
+
+</script>
+
+</body>
+</html>
