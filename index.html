@@ -1,57 +1,13 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <title>AI Assistant – Thiện Master AI</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-    }
-    textarea {
-      width: 100%;
-      height: 120px;
-    }
-    button {
-      padding: 10px 20px;
-      margin-top: 10px;
-    }
-    #result {
-      margin-top: 20px;
-      white-space: pre-wrap;
-      background: #f5f5f5;
-      padding: 15px;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>🤖 AI Assistant</h1>
-
-  <textarea id="prompt" placeholder="Nhập câu hỏi cho AI..."></textarea>
-  <br>
-  <button onclick="askAI()">Gửi cho AI</button>
-
-  <div id="result"></div>
-
-  <script>
-    async function askAI() {
-      const prompt = document.getElementById("prompt").value;
-      document.getElementById("result").innerText = "⏳ Đang xử lý...";
-
-      const res = await fetch("/api/ai", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ prompt })
-      });
-
-      const data = await res.json();
-      document.getElementById("result").innerText = data.result || "❌ Lỗi AI";
-    }
-  </script>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
+
